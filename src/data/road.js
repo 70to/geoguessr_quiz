@@ -1,4 +1,4 @@
-const data = [
+const road = [
   {
     question: "https://fabiencelier.github.io/geoguessr-tips/resources/img/road-lines/road-lines-sweden-01.png",
     incorrectAnswers: [
@@ -11,7 +11,7 @@ const data = [
   {
     question: "https://somerandomstuff1.files.wordpress.com/2019/02/denmark-road-lines.png",
     incorrectAnswers: [
-      "フィンランド",
+      "test",
       "スウェーデン",
       "アイスランド",
     ],
@@ -19,4 +19,4 @@ const data = [
   },
 ];
 
-export default data;
+export default road;
