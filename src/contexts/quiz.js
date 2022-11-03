@@ -1,7 +1,8 @@
-import React, {createContext, useState, useReducer} from "react";
+import React, {createContext, useReducer} from "react";
 import {shuffleAnswers} from "../helpers";
 
 const initialState = {
+    startFlag: false,
     questions: [],
     currentQuestionIndex: 0,
     currentAnswer: "",
@@ -18,6 +19,7 @@ const reducer = (state, action) => {
             state.answers = shuffleAnswers(state.questions[0])
             return {
                 ...state,
+                startFlag: true
             };
         }
         case "SELECT_ANSWER": {
@@ -49,7 +51,7 @@ const reducer = (state, action) => {
                 answers,
             };
         }
-        case "RESTART": {
+        case "HOME": {
             return initialState;
         }
         default:
@@ -61,18 +63,9 @@ export const QuizContext = createContext({});
 
 export const QuizProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const [startFlag, setStartFlag] = useState(false);
-    const [category, setCategory] = useState(null);
-    const [quizData, setQuizData] = useState([]);
 
     return <QuizContext.Provider value={{
         state,
         dispatch,
-        startFlag,
-        setStartFlag,
-        category,
-        setCategory,
-        quizData,
-        setQuizData
     }}>{children}</QuizContext.Provider>;
 };

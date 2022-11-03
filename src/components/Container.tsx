@@ -5,7 +5,7 @@ import Quiz from "./Quiz";
 import {QuizContext} from "../contexts/quiz";
 
 function Container() {
-    const {startFlag} = useContext<any>(QuizContext);
+    const {state} = useContext<any>(QuizContext);
 
     return (
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -17,11 +17,11 @@ function Container() {
                             <div
                                 className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                                 <BrowserRouter>
-                                    {!startFlag && (
-                                    <QuizList />
+                                    {!state.startFlag && (
+                                        <QuizList/>
                                     )}
-                                    {startFlag && (
-                                        <Quiz />
+                                    {state.startFlag && (
+                                        <Quiz/>
                                     )}
                                 </BrowserRouter>
                             </div>

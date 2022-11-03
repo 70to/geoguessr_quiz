@@ -3,7 +3,7 @@ import Question from "./Question";
 import {QuizContext} from "../contexts/quiz";
 
 const Quiz = () => {
-    const {state, dispatch, category, setStartFlag} = useContext(QuizContext);
+    const {state, dispatch, category} = useContext(QuizContext);
     return (
         <div>
             {state.showResults && (
@@ -23,7 +23,7 @@ const Quiz = () => {
                     {/*    Restart*/}
                     {/*</div> */}
                     <div
-                        onClick={() => setStartFlag(false)}
+                        onClick={() => [dispatch({type: "RESTART"})]}
                         className="next-button"
                     >
                         HOME

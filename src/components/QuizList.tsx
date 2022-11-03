@@ -4,7 +4,7 @@ import "./QuizList.css"
 
 const QuizList = () => {
     const categories = ['road', 'language']
-    let {setStartFlag, dispatch} = useContext<any>(QuizContext);
+    let {dispatch} = useContext<any>(QuizContext);
     return (
         <div>
             <h2 className="text-3xl text-center font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">Quiz For Geoguessor</h2>
@@ -12,7 +12,6 @@ const QuizList = () => {
                 return (
                     <div className="category mb-6 p-14"
                          onClick={() => {
-                             setStartFlag(true)
                              dispatch({type: "GET_QUIZ", payload: category})
                          }}
                          key={category}
