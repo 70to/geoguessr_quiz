@@ -23,7 +23,7 @@ const Quiz = () => {
                     {/*    Restart*/}
                     {/*</div> */}
                     <div
-                        onClick={() => [dispatch({type: "RESTART"})]}
+                        onClick={() => [dispatch({type: "HOME"})]}
                         className="next-button"
                     >
                         HOME
