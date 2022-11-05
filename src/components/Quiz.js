@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext} from "react";
 import Question from "./Question";
 import {QuizContext} from "../contexts/quiz";
 
@@ -7,24 +7,18 @@ const Quiz = () => {
     return (
         <div>
             {state.showResults && (
-                <div className="results">
-                    <div className="congratulations">Congratulations!</div>
-                    <div className="results-info">
-                        <div>You have completed the quiz.</div>
-                        <div>
-                            You've got {state.correctAnswersCount} of &nbsp;
-                            {state.questions.length} right.
-                        </div>
+                <div className="text-center">
+                    <div>
+                        <p>
+                            <span
+                                className="font-display text-5xl font-bold tracking-tighter text-blue-600 sm:text-6xl px-2">{state.questions.length}</span>問中
+                            <span
+                                className="font-display text-5xl font-bold tracking-tighter text-blue-600 sm:text-6xl px-2">{state.questions.length}</span>問正解でした。
+                        </p>
                     </div>
-                    {/*<div*/}
-                    {/*    onClick={() => dispatch({type: "RESTART"})}*/}
-                    {/*    className="next-button"*/}
-                    {/*>*/}
-                    {/*    Restart*/}
-                    {/*</div> */}
                     <div
                         onClick={() => [dispatch({type: "HOME"})]}
-                        className="next-button"
+                        className="mt-10 cursor-pointer inline-flex items-center rounded-md border border-transparent bg-slate-800 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                         HOME
                     </div>
@@ -35,17 +29,19 @@ const Quiz = () => {
                     <div>
                         {category}
                     </div>
-                    {/*<div className="score">*/}
-                    {/*    Question {quizState.currentQuestionIndex + 1}/*/}
-                    {/*    {quizState.questions.length}*/}
-                    {/*</div>*/}
+                    <div className="score">
+                        Question {state.currentQuestionIndex + 1}/
+                        {state.questions.length}
+                    </div>
                     <Question/>
                     {state.currentAnswer && (
-                        <div
-                            onClick={() => dispatch({type: "NEXT_QUESTION"})}
-                            className="next-button mt-10"
-                        >
-                            Next question
+                        <div className={"text-center"}>
+                            <div
+                                onClick={() => dispatch({type: "NEXT_QUESTION"})}
+                                className="mt-10 cursor-pointer inline-flex items-center rounded-md border border-transparent bg-slate-800 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            >
+                                Next question
+                            </div>
                         </div>
                     )}
                 </div>

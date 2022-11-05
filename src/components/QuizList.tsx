@@ -3,22 +3,36 @@ import {QuizContext} from "../contexts/quiz";
 import "./QuizList.css"
 
 const QuizList = () => {
-    const categories = ['road', 'language']
+    const categories = [
+        {
+            "key": "road",
+            "name": "Street",
+            "image": "https://images.unsplash.com/photo-1598966835412-6de6f92c243d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RyZWV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "key": "language",
+            "name": "Language",
+            "image": "https://images.unsplash.com/photo-1539632346654-dd4c3cffad8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+        },
+    ]
+
     let {dispatch} = useContext<any>(QuizContext);
     return (
         <div>
-            <h2 className="text-3xl text-center font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">Quiz For Geoguessor</h2>
+            <h2 className="text-3xl text-center font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+                Quiz For Geoguessor
+            </h2>
             {categories.map((category) => {
                 return (
-                    <div className="category mb-6 p-14"
+                    <div className="category mb-6 p-14 last:mb-0"
                          onClick={() => {
-                             dispatch({type: "GET_QUIZ", payload: category})
+                             dispatch({type: "GET_QUIZ", payload: category.key})
                          }}
-                         key={category}
-                         style={{backgroundImage: 'url(https://images.unsplash.com/photo-1667262422332-9b09d4065117?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80)'}}
+                         key={category.key}
+                         style={{backgroundImage: `url(${category.image})`}}
                     >
                         <div className="example">
-                            <p className="text-2xl">{category}</p>
+                            <p className="text-2xl">{category.name}</p>
                         </div>
                     </div>
                 );
