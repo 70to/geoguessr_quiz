@@ -7,7 +7,9 @@ const Answer = ({
   currentAnswer,
   correctAnswer,
 }) => {
+  console.log(currentAnswer)
   const letterMapping = ["A", "B", "C", "D"];
+  const isClickedClass = currentAnswer ? '' : 'text-gray-900'
   const isCorrectAnswer = currentAnswer && answerText === correctAnswer;
   const isWrongAnswer =
     currentAnswer === answerText && currentAnswer !== correctAnswer;
@@ -22,7 +24,7 @@ const Answer = ({
             key={index} onClick={() => onSelectAnswer(answerText)} className={`mt-5 flex items-center space-x-3 rounded-lg border border-gray-300 shadow-sm hover:border-gray-400 ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`} >
           <div className="min-w-0 flex-1">
             <a href="#" className="focus:outline-none px-6 py-5 flex justify-between items-center">
-              <p className={`text-lg font-medium text-gray-900 ${correctAnswerTextClass} ${wrongAnswerTextClass}`}>{answerText}</p>
+              <p className={`text-lg font-medium ${isClickedClass} ${correctAnswerTextClass} ${wrongAnswerTextClass}`}>{answerText}</p>
               {
                 (() => {
                   if (isCorrectAnswer) {
