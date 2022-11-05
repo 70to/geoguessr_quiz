@@ -9,8 +9,7 @@ const Question = () => {
     return (
         <div>
             <img
-                src={currentQuestion.question}
-                alt=""/>
+                src={`${process.env.PUBLIC_URL}/${currentQuestion.question}`} alt=""/>
             <div>
                 {state.answers.map((answer, index) => (
                     <Answer

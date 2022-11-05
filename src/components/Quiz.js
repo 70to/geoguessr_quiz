@@ -13,7 +13,7 @@ const Quiz = () => {
                             <span
                                 className="font-display text-5xl font-bold tracking-tighter text-blue-600 sm:text-6xl px-2">{state.questions.length}</span>問中
                             <span
-                                className="font-display text-5xl font-bold tracking-tighter text-blue-600 sm:text-6xl px-2">{state.questions.length}</span>問正解でした。
+                                className="font-display text-5xl font-bold tracking-tighter text-blue-600 sm:text-6xl px-2">{state.correctAnswersCount}</span>問正解でした。
                         </p>
                     </div>
                     <div
@@ -29,7 +29,7 @@ const Quiz = () => {
                     <div>
                         {category}
                     </div>
-                    <div className="score">
+                    <div className="mb-1 text-base tracking-tight text-slate-500">
                         Question {state.currentQuestionIndex + 1}/
                         {state.questions.length}
                     </div>
