@@ -1,5 +1,5 @@
 import React, {createContext, useReducer} from "react";
-import {shuffleAnswers} from "../helpers";
+import {shuffleAnswers, shuffleQuestions} from "../helpers";
 
 const initialState = {
     startFlag: false,
@@ -15,7 +15,7 @@ const reducer = (state, action) => {
     switch (action.type) {
         case "GET_QUIZ": {
             const data = require(`../data/${action.payload}.js`)
-            state.questions = data.default
+            state.questions = shuffleQuestions(data.default)
             state.answers = shuffleAnswers(state.questions[0])
             return {
                 ...state,
