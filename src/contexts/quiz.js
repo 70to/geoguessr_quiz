@@ -52,6 +52,7 @@ const reducer = (state, action) => {
                 : shuffleAnswers(state.questions[currentQuestionIndex]);
             return {
                 ...state,
+                loading: true,
                 currentAnswer: "",
                 showResults,
                 currentQuestionIndex,
