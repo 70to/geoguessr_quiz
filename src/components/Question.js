@@ -1,9 +1,10 @@
 import Answer from "./Answer";
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {QuizContext} from "../contexts/quiz";
 
 const Question = () => {
     const {state, dispatch} = useContext(QuizContext);
+    const [loading, setLoading] = useState(true);
     const currentQuestion = state.questions[state.currentQuestionIndex];
     const imgPath = currentQuestion.question
     const img = new Image()
@@ -11,8 +12,11 @@ const Question = () => {
 
     return (
         <div>
+            <div style={{display: loading ? "block" : "none"}}>
+                loading
+            </div>
             <img
-                src={`${process.env.PUBLIC_URL}/${imgPath}`} alt=""/>
+                style={{display: loading ? "none" : "block"}} src={`${process.env.PUBLIC_URL}/${imgPath}`} alt="" onLoad={() => setLoading(false)}/>
             <div>
                 {state.answers.map((answer, index) => (
                     <Answer
