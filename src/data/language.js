@@ -1,12 +1,12 @@
-const road = [
+const questions = [
   {
-    question: "https://images.unsplash.com/photo-1667262422332-9b09d4065117?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    question: "languages/thai.png",
     incorrectAnswers: [
       "aaa",
       "bbb",
       "vvvv",
     ],
-    correctAnswer: "ddd",
+    correctAnswer: "タイ語",
   },
   {
     question: "https://somerandomstuff1.files.wordpress.com/2019/02/denmark-road-lines.png",
@@ -19,4 +19,4 @@ const road = [
   },
 ];
 
-export default road;
+export default questions;

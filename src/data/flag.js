@@ -1,4 +1,4 @@
-const road = [
+const questions = [
   {
     question: "flags/norway.jpg",
     incorrectAnswers: [
@@ -91,4 +91,4 @@ const road = [
   },
 ];
 
-export default road;
+export default questions;
