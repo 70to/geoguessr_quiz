@@ -3,6 +3,7 @@ import {shuffleAnswers, shuffleQuestions} from "../helpers";
 
 const initialState = {
     startFlag: false,
+    loading: true,
     questions: [],
     currentQuestionIndex: 0,
     currentAnswer: "",
@@ -20,6 +21,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 startFlag: true
+            };
+        }
+        case "LOAD_QUESTION": {
+            return {
+                ...state,
+                loading: false
             };
         }
         case "SELECT_ANSWER": {
