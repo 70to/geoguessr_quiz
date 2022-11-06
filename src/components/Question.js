@@ -5,11 +5,14 @@ import {QuizContext} from "../contexts/quiz";
 const Question = () => {
     const {state, dispatch} = useContext(QuizContext);
     const currentQuestion = state.questions[state.currentQuestionIndex];
+    const imgPath = currentQuestion.question
+    const img = new Image()
+    img.src = imgPath // プリロードする
 
     return (
         <div>
             <img
-                src={`${process.env.PUBLIC_URL}/${currentQuestion.question}`} alt=""/>
+                src={`${process.env.PUBLIC_URL}/${imgPath}`} alt=""/>
             <div>
                 {state.answers.map((answer, index) => (
                     <Answer
