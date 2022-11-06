@@ -15,21 +15,23 @@ const Question = () => {
             <div style={{display: loading ? "block" : "none"}}>
                 loading
             </div>
-            <img
-                style={{display: loading ? "none" : "block"}} src={`${process.env.PUBLIC_URL}/${imgPath}`} alt="" onLoad={() => setLoading(false)}/>
-            <div>
-                {state.answers.map((answer, index) => (
-                    <Answer
-                        answerText={answer}
-                        currentAnswer={state.currentAnswer}
-                        correctAnswer={currentQuestion.correctAnswer}
-                        key={index}
-                        index={index}
-                        onSelectAnswer={(answerText) =>
-                            dispatch({type: "SELECT_ANSWER", payload: answerText})
-                        }
-                    />
-                ))}
+            <div style={{display: loading ? "none" : "block"}}>
+                <img
+                    src={`${process.env.PUBLIC_URL}/${imgPath}`} alt="" onLoad={() => setLoading(false)}/>
+                <div>
+                    {state.answers.map((answer, index) => (
+                        <Answer
+                            answerText={answer}
+                            currentAnswer={state.currentAnswer}
+                            correctAnswer={currentQuestion.correctAnswer}
+                            key={index}
+                            index={index}
+                            onSelectAnswer={(answerText) =>
+                                dispatch({type: "SELECT_ANSWER", payload: answerText})
+                            }
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
