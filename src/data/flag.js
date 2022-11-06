@@ -53,6 +53,42 @@ const road = [
     ],
     correctAnswer: "フェロー諸島",
   },
+  {
+    question: "flags/singapore.jpg",
+    incorrectAnswers: [
+      "インドネシア",
+      "ポーランド",
+      "モナコ",
+    ],
+    correctAnswer: "シンガポール",
+  },
+  {
+    question: "flags/indonesia.jpg",
+    incorrectAnswers: [
+      "シンガポール",
+      "ポーランド",
+      "モナコ",
+    ],
+    correctAnswer: "インドネシア",
+  },
+  {
+    question: "flags/pakistan.jpg",
+    incorrectAnswers: [
+      "シンガポール",
+      "トルコ",
+      "チェニジア",
+    ],
+    correctAnswer: "パキスタン",
+  },
+  {
+    question: "flags/cambodia.jpg",
+    incorrectAnswers: [
+      "パキスタン",
+      "タイ",
+      "アフガニスタン",
+    ],
+    correctAnswer: "カンボジア",
+  },
 ];
 
 export default road;
