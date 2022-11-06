@@ -5,9 +5,6 @@ import {QuizContext} from "../contexts/quiz";
 const Question = () => {
     const {state, dispatch} = useContext(QuizContext);
     const currentQuestion = state.questions[state.currentQuestionIndex];
-    const imgPath = currentQuestion.question
-    const img = new Image()
-    img.src = imgPath // プリロードする
 
     return (
         <div>
@@ -16,7 +13,7 @@ const Question = () => {
             </div>
             <div style={{display: state.loading ? "none" : "block"}}>
                 <img
-                    src={`${process.env.PUBLIC_URL}/${imgPath}`} alt="" onLoad={() => dispatch({type: "LOAD_QUESTION"})}/>
+                    src={`${process.env.PUBLIC_URL}/${currentQuestion.question}`} alt="" onLoad={() => dispatch({type: "LOAD_QUESTION"})}/>
                 <div>
                     {state.answers.map((answer, index) => (
                         <Answer
