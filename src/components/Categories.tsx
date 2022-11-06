@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
 import {QuizContext} from "../contexts/quiz";
-import "./QuizList.css"
+import "./Categories.css"
 
-const QuizList = () => {
+const Categories = () => {
     const categories = [
         {
             "key": "road",
@@ -46,4 +46,4 @@ const QuizList = () => {
     )
 }
 
-export default QuizList
+export default Categories

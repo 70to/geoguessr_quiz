@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {BrowserRouter} from "react-router-dom";
-import QuizList from "./QuizList";
+import Categories from "./Categories";
 import Quiz from "./Quiz";
 import {QuizContext} from "../contexts/quiz";
 
@@ -18,7 +18,7 @@ function Container() {
                                 className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:px-6 sm:pt-6 sm:pb-10">
                                 <BrowserRouter>
                                     {!state.startFlag && (
-                                        <QuizList/>
+                                        <Categories/>
                                     )}
                                     {state.startFlag && (
                                         <Quiz/>
