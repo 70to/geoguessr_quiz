@@ -1,9 +1,9 @@
 const categories = [
-    {
-        "key": "road",
-        "name": "Road Line",
-        "image": "https://images.unsplash.com/photo-1598966835412-6de6f92c243d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RyZWV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-    },
+    // {
+    //     "key": "road",
+    //     "name": "Road Line",
+    //     "image": "https://images.unsplash.com/photo-1598966835412-6de6f92c243d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RyZWV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    // },
     {
         "key": "language",
         "name": "Language",
