@@ -12,8 +12,9 @@ const Question = () => {
                 loading
             </div>
             <div style={{display: state.loading ? "none" : "block"}}>
+                <p className="text-2xl text-slate-800 my-6">{currentQuestion.questionTxt}</p>
                 <img
-                    src={`${process.env.PUBLIC_URL}/${currentQuestion.question}`} alt="" onLoad={() => dispatch({type: "LOAD_QUESTION"})}/>
+                    src={`${process.env.PUBLIC_URL}/${currentQuestion.questionImg}`} alt="" onLoad={() => dispatch({type: "LOAD_QUESTION"})}/>
                 <div>
                     {state.answers.map((answer, index) => (
                         <Answer

@@ -18,9 +18,11 @@ const reducer = (state, action) => {
             const data = require(`../data/${action.payload}.js`)
             state.questions = shuffleQuestions(data.default)
             state.answers = shuffleAnswers(state.questions[0])
+            const loading = !!state.questions[state.currentQuestionIndex].questionImg
             return {
                 ...state,
-                startFlag: true
+                startFlag: true,
+                loading: loading
             };
         }
         case "LOAD_QUESTION": {
@@ -50,9 +52,10 @@ const reducer = (state, action) => {
             const answers = showResults
                 ? []
                 : shuffleAnswers(state.questions[currentQuestionIndex]);
+            const loading = !!state.questions[currentQuestionIndex].questionImg;
             return {
                 ...state,
-                loading: true,
+                loading: loading,
                 currentAnswer: "",
                 showResults,
                 currentQuestionIndex,

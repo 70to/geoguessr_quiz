@@ -7,7 +7,6 @@ const Answer = ({
   currentAnswer,
   correctAnswer,
 }) => {
-  console.log(currentAnswer)
   const letterMapping = ["A", "B", "C", "D"];
   const isClickedClass = currentAnswer ? '' : 'text-gray-900'
   const isCorrectAnswer = currentAnswer && answerText === correctAnswer;

@@ -1,6 +1,6 @@
 const questions = [
   {
-    question: "flags/norway.jpg",
+    questionImg: "flags/norway.jpg",
     incorrectAnswers: [
       "フィンランド",
       "デンマーク",
@@ -9,7 +9,7 @@ const questions = [
     correctAnswer: "ノルウェー",
   },
   {
-    question: "flags/finland.jpeg",
+    questionImg: "flags/finland.jpeg",
     incorrectAnswers: [
       "デンマーク",
       "スウェーデン",
@@ -18,7 +18,7 @@ const questions = [
     correctAnswer: "フィンランド",
   },
   {
-    question: "flags/sweden.jpg",
+    questionImg: "flags/sweden.jpg",
     incorrectAnswers: [
       "デンマーク",
       "フィンランド",
@@ -27,7 +27,7 @@ const questions = [
     correctAnswer: "スウェーデン",
   },
   {
-    question: "flags/denmark.jpg",
+    questionImg: "flags/denmark.jpg",
     incorrectAnswers: [
       "スウェーデン",
       "フィンランド",
@@ -36,7 +36,7 @@ const questions = [
     correctAnswer: "デンマーク",
   },
   {
-    question: "flags/iceland.jpg",
+    questionImg: "flags/iceland.jpg",
     incorrectAnswers: [
       "フィンランド",
       "デンマーク",
@@ -45,7 +45,7 @@ const questions = [
     correctAnswer: "アイスランド",
   },
   {
-    question: "flags/faroe-island.jpg",
+    questionImg: "flags/faroe-island.jpg",
     incorrectAnswers: [
       "フィンランド",
       "デンマーク",
@@ -54,7 +54,7 @@ const questions = [
     correctAnswer: "フェロー諸島",
   },
   {
-    question: "flags/singapore.jpg",
+    questionImg: "flags/singapore.jpg",
     incorrectAnswers: [
       "インドネシア",
       "ポーランド",
@@ -63,7 +63,7 @@ const questions = [
     correctAnswer: "シンガポール",
   },
   {
-    question: "flags/indonesia.jpg",
+    questionImg: "flags/indonesia.jpg",
     incorrectAnswers: [
       "シンガポール",
       "ポーランド",
@@ -72,7 +72,7 @@ const questions = [
     correctAnswer: "インドネシア",
   },
   {
-    question: "flags/pakistan.jpg",
+    questionImg: "flags/pakistan.jpg",
     incorrectAnswers: [
       "シンガポール",
       "トルコ",
@@ -81,7 +81,7 @@ const questions = [
     correctAnswer: "パキスタン",
   },
   {
-    question: "flags/cambodia.jpg",
+    questionImg: "flags/cambodia.jpg",
     incorrectAnswers: [
       "パキスタン",
       "タイ",

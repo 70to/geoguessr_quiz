@@ -14,7 +14,7 @@ const Categories = () => {
                 return (
                     <div className="category mb-6 p-14 last:mb-0"
                          onClick={() => {
-                             dispatch({type: "GET_QUIZ", payload: category.key})
+                             dispatch({type: "GET_QUIZ", payload: category.key});
                          }}
                          key={category.key}
                          style={{backgroundImage: `url(${category.image})`}}
