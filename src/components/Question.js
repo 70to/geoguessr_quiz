@@ -5,6 +5,7 @@ import {QuizContext} from "../contexts/quiz";
 const Question = () => {
     const {state, dispatch} = useContext(QuizContext);
     const currentQuestion = state.questions[state.currentQuestionIndex];
+    const questionImg = currentQuestion.questionImg
 
     return (
         <div>
@@ -13,8 +14,10 @@ const Question = () => {
             </div>
             <div style={{display: state.loading ? "none" : "block"}}>
                 <p className="text-2xl text-slate-800 my-6">{currentQuestion.questionTxt}</p>
-                <img
-                    src={`${process.env.PUBLIC_URL}/${currentQuestion.questionImg}`} alt="" onLoad={() => dispatch({type: "LOAD_QUESTION"})}/>
+                {questionImg &&
+                    <img src={`${process.env.PUBLIC_URL}/${questionImg}`} alt=""
+                         onLoad={() => dispatch({type: "LOAD_QUESTION"})}/>
+                }
                 <div>
                     {state.answers.map((answer, index) => (
                         <Answer
