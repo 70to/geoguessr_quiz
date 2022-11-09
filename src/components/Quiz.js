@@ -3,7 +3,7 @@ import Question from "./Question";
 import {QuizContext} from "../contexts/quiz";
 
 const Quiz = () => {
-    const {state, dispatch, category} = useContext(QuizContext);
+    const {state, dispatch} = useContext(QuizContext);
     return (
         <div>
             {state.showResults && (
@@ -26,12 +26,14 @@ const Quiz = () => {
             )}
             {!state.showResults && (
                 <div>
-                    <div>
-                        {category}
-                    </div>
-                    <div className="mb-1 text-base tracking-tight text-slate-500">
-                        Question {state.currentQuestionIndex + 1}/
-                        {state.questions.length}
+                    <div className="flex justify-between">
+                        <div className="mb-1 text-base tracking-tight text-slate-500 cursor-pointer" onClick={() => [dispatch({type: "HOME"})]}>
+                            HOME
+                        </div>
+                        <div className="mb-1 text-base tracking-tight text-slate-500">
+                            Question {state.currentQuestionIndex + 1}/
+                            {state.questions.length}
+                        </div>
                     </div>
                     <Question/>
                     {state.currentAnswer && (
